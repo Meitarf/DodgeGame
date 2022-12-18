@@ -1,0 +1,50 @@
+﻿<Page
+    x:Class="Game.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Game"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    >
+    <Page.BottomAppBar>
+        <CommandBar x:Name="ComBar"  IsOpen="True" IsSticky="True"  HorizontalContentAlignment="Left">
+            <CommandBar.PrimaryCommands>
+                <AppBarButton x:Name="btnSave" Icon="Save" Label="Save" Click="btnSave_Click"/>
+                <AppBarButton x:Name="btnPause" Icon="Pause" Label="Pause" Click="btnPause_Click"/>
+                <AppBarButton x:Name="btnExit" Icon="Cancel" Label="Exit" Click="btnExit_Click"/>
+                <AppBarButton x:Name="btnStart" Icon="Play" Label="Start" Click="btnStart_Click"/>
+                <AppBarButton x:Name="btnLoad" Icon="Download" Label="Load" Click="btnLoad_Click"/>
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+
+
+    <Canvas Name ="Playground">
+        <ContentDialog x:Name="YouWinDialog"
+                      
+                       Title="You Won! Congratulations"
+                       PrimaryButtonText="New Game"
+                       IsPrimaryButtonEnabled="True"
+                       HorizontalAlignment="Center" SecondaryButtonText="Exit Game" PrimaryButtonClick="YouWinDialog_PrimaryButtonClick" SecondaryButtonClick="YouWinDialog_SecondaryButtonClick"
+                      >
+            <StackPanel>
+                <Image Source="Assets/windance.gif" Width="500" Height="500"></Image>
+            </StackPanel>
+        </ContentDialog>
+        <ContentDialog x:Name="YouLoseDialog"
+                      
+                       Title="You Lose! Try Again?"
+                       PrimaryButtonText="New Game"
+                       IsPrimaryButtonEnabled="True"
+                       HorizontalAlignment="Center" SecondaryButtonText="Exit Game" PrimaryButtonClick="YouLoseDialog_PrimaryButtonClick" SecondaryButtonClick="YouLoseDialog_SecondaryButtonClick"
+                      >
+            <StackPanel>
+                <Image Source="Assets/losedance.gif" Width="500" Height="500"></Image>
+            </StackPanel>
+        </ContentDialog>
+    </Canvas>
+    
+   
+</Page>
